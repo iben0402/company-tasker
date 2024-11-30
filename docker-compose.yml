@@ -8,6 +8,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: fk@71DIy
     volumes:
-      - mysql-data:/var/lib/mysql
+      - ./init-scripts:/docker-entrypoint-initdb.d
 volumes:
   mysql-data:
