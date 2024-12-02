@@ -19,6 +19,8 @@ public class UserService {
         List<User> users = userRepository.findAll();
         return users.stream()
                 .map(user -> new UserResponseDTO(
+                        user.getName(),
+                        user.getSurname(),
                         user.getUsername(),
                         user.getRole().getName(),
                         user.getTeam() != null ? user.getTeam().getName() : null

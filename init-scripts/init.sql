@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS attachments (
 -- INITIAL DATA
 INSERT INTO roles (name) VALUES ('admin');
 
-INSERT INTO users (username, password, role_id) VALUES ('admin', 'aDmin645!', 1);
+INSERT INTO users (username, password, role_id, name, surname) VALUES ('admin', 'aDmin645!', 1, "Adam", "Kowalski");
 
 INSERT INTO teams (name, description, owner_id) VALUES ('administration', 'Management team', 1);
 UPDATE users SET team_id = 1 WHERE id = 1;

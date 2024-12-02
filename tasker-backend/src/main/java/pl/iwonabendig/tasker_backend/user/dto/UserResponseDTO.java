@@ -8,6 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserResponseDTO {
+    private String name;
+    private String surname;
     private String username;
     private String role;
     private String team;
