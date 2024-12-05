@@ -1,0 +1,43 @@
+.sidebar {
+    width: 250px;
+    background: #21233a;
+    color: #fff;
+    padding: 10px;
+    height: 100vh;
+    position: fixed; /* Sidebar jest przyklejony do lewej strony */
+    top: 0; /* Ustawienie na górze */
+    left: 0; /* Przyklejenie do lewej strony ekranu */
+    overflow: hidden; /* Brak przewijania */
+}
+
+.sidebar-list {
+    margin: 0;
+    list-style: none;
+}
+
+.sidebar-list svg {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.sidebar-list li {
+    margin: 16px 0;
+    font-size: 20px;
+}
+
+.sidebar-list li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar-title {
+    margin-left: 10px;
+    font-size: 30px;
+    font-weight: 200;
+    margin-bottom: 50px;
+}
+
+.sidebar-title a {
+    color:white;
+    text-decoration: none;
+}
