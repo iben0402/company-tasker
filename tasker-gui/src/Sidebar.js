@@ -36,12 +36,16 @@ export function Sidebar() {
                     </a>
                 </li>
                 <li>
-                    <UserPlusIcon />
-                    Roles
+                    <a href={"/roles"}>
+                        <UserPlusIcon/>
+                        Roles
+                    </a>
                 </li>
                 <li>
-                    <UserIcon />
-                    Employees
+                    <a href={"/employees"}>
+                        <UserIcon/>
+                        Employees
+                    </a>
                 </li>
             </ul>
         </div>

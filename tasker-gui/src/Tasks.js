@@ -1,9 +1,7 @@
 import './App.css';
 import {Sidebar} from "./Sidebar";
 
-function App() {
-    const user = JSON.parse(localStorage.getItem("user"));
-    const userName = user.name;
+function Tasks() {
     return (
         <div className="main-container">
             <div>
@@ -12,11 +10,11 @@ function App() {
 
             {/* Główna część strony */}
             <div className="content">
-                <h1>Hello {userName}</h1>
+                <h1>TASKS PAGE</h1>
                 <p>This is the content area. Put your main content here.</p>
             </div>
         </div>
     );
 }
 
-export default App;
+export default Tasks;
