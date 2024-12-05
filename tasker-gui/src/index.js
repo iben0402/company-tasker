@@ -12,6 +12,7 @@ import Employees from './Employees';
 import LoginPage from './LoginPage';
 import ProjectDetails from "./ProjectDetails";
 import MyProjects from "./MyProjects";
+import NewProject from "./NewProject";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -32,6 +33,7 @@ root.render(
                 <Route path={"/projects/my"} element={<MyProjects />} />
                 <Route path={"/projects/all"} element={<AllProjects />} />
                 <Route path={"/projects/:id"} element={<ProjectDetails />} />
+                <Route path={"/projects/new"} element={<NewProject />} />
             </Routes>
         </Router>
     </React.StrictMode>

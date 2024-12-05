@@ -15,7 +15,7 @@ function Projects() {
                 <div className={"menu"}>
                     <MenuButton url={"/projects/my"} title={"Your projects"} icon={<PresentationChartBarIcon/>}/>
                     <MenuButton url={"/projects/all"} title={"All projects"} icon={<PresentationChartBarIcon/>}/>
-                    <MenuButton url={"/projects"} title={"New project"} icon={<PlusCircleIcon/>}/>
+                    <MenuButton url={"/projects/new"} title={"New project"} icon={<PlusCircleIcon/>}/>
                 </div>
             </div>
         </div>
