@@ -28,7 +28,6 @@ function App() {
                     <MenuButton url={"/teams"} title={"Teams"} icon={<UsersIcon />} />
                     <MenuButton url={"/roles"} title={"Roles"} icon={<UserPlusIcon />} />
                     <MenuButton url={"/employees"} title={"Employees"} icon={<UserIcon />} />
-
                 </div>
             </div>
         </div>

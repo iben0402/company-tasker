@@ -13,9 +13,14 @@
 
 .menu {
     display: flex;
-    gap: 50px;
+    gap: 100px;
     width: 100%;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     margin-top: 80px;
+}
+
+h1.title {
+    font-weight: 300;
+    font-size: 50px;
 }

@@ -1,5 +1,11 @@
 import './App.css';
 import {Sidebar} from "./Sidebar";
+import MenuButton from "./MenuButton";
+import {
+    RectangleStackIcon,
+    UsersIcon,
+    PlusCircleIcon,
+} from "@heroicons/react/24/solid";
 
 function Tasks() {
     return (
@@ -8,10 +14,13 @@ function Tasks() {
                 <Sidebar />
             </div>
 
-            {/* Główna część strony */}
             <div className="content">
-                <h1>TASKS PAGE</h1>
-                <p>This is the content area. Put your main content here.</p>
+                <h1 className={"title"}>TASKS</h1>
+                <div className={"menu"}>
+                    <MenuButton url={"/tasks"} title={"Your tasks"} icon={<RectangleStackIcon/>}/>
+                    <MenuButton url={"/tasks"} title={"All tasks"} icon={<RectangleStackIcon/>}/>
+                    <MenuButton url={"/tasks"} title={"New task"} icon={<PlusCircleIcon/>}/>
+                </div>
             </div>
         </div>
     );

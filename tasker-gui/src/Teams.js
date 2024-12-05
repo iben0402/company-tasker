@@ -1,5 +1,7 @@
 import './App.css';
 import {Sidebar} from "./Sidebar";
+import {PlusCircleIcon, UsersIcon} from "@heroicons/react/24/solid";
+import MenuButton from "./MenuButton";
 
 function Teams() {
     return (
@@ -8,10 +10,13 @@ function Teams() {
                 <Sidebar />
             </div>
 
-            {/* Główna część strony */}
             <div className="content">
-                <h1>TEAMS PAGE</h1>
-                <p>This is the content area. Put your main content here.</p>
+                <h1 className={"title"}>TEAMS</h1>
+                <div className={"menu"}>
+                    <MenuButton url={"/teams"} title={"Your teams"} icon={<UsersIcon/>}/>
+                    <MenuButton url={"/teams"} title={"All teams"} icon={<UsersIcon/>}/>
+                    <MenuButton url={"/teams"} title={"New team"} icon={<PlusCircleIcon/>}/>
+                </div>
             </div>
         </div>
     );
