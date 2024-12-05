@@ -1,6 +1,7 @@
 package pl.iwonabendig.tasker_backend.project.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import pl.iwonabendig.tasker_backend.team.entity.Team;
