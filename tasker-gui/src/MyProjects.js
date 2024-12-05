@@ -7,9 +7,10 @@ import ProjectsDisplay from "./ProjectsDisplay";
 // TODO: add "create" button
 function AllProjects() {
     const [projects, setProjects] = useState([]);
+    const userId = JSON.parse(localStorage.getItem("user")).id;
 
     useEffect(() => {
-        fetch("http://localhost:8080/api/projects")
+        fetch("http://localhost:8080/api/projects/user/" + userId)
             .then((response) => {
                 if (response.ok) {
                     return response.json();
