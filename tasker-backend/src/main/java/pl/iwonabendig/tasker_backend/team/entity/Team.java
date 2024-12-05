@@ -7,6 +7,7 @@ import pl.iwonabendig.tasker_backend.project.entity.Project;
 import pl.iwonabendig.tasker_backend.user.entity.User;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -31,6 +32,9 @@ public class Team {
 
     @ManyToMany(mappedBy = "teams")
     private Set<Project> projects = new HashSet<>();
+
+    @OneToMany(mappedBy = "team")
+    private List<User> users;
 
     public void addProject(Project project) {
         this.projects.add(project);

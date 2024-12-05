@@ -8,7 +8,6 @@ import java.util.List;
 
 public interface ProjectRepository extends JpaRepository<Project, Long> {
 
-    // Zapytanie JPA, które zwraca projekty związane z użytkownikiem
     @Query("SELECT p FROM Project p " +
             "JOIN p.teams t " +
             "WHERE t.owner.id = :userId " +

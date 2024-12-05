@@ -1,4 +1,4 @@
-package pl.iwonabendig.tasker_backend.team;
+package pl.iwonabendig.tasker_backend.team.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
