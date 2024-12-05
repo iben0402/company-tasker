@@ -32,6 +32,16 @@ public class TaskService {
                 .collect(Collectors.toList());
     }
 
+    public List<TaskResponseDTO> getAllTasksByAssigneeId(Long id) {
+        Optional<User> assigneeOptional = userRepository.findById(id);
+        if (assigneeOptional.isEmpty()) {
+            throw new IllegalArgumentException("Invalid assignee ID");
+        }
+        return taskRepository.findAllByAssignee(assigneeOptional.get()).stream()
+                .map(this::buildTaskResponseDTO)
+                .collect(Collectors.toList());
+    }
+
     public Task createTask(TaskRequestDTO taskRequestDTO) {
         // Validate the project exists
         Optional<Project> projectOptional = projectRepository.findById(taskRequestDTO.getProjectId());

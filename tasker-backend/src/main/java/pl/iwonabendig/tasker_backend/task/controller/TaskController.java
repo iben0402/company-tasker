@@ -33,4 +33,11 @@ public class TaskController {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
     }
+
+    @GetMapping("/user/{id}")
+    public ResponseEntity<List<TaskResponseDTO>> getAllTasksByAssignee(@PathVariable Long id) {
+        List<TaskResponseDTO> tasks = taskService.getAllTasksByAssigneeId(id);
+        if(tasks.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        else return new ResponseEntity<>(tasks, HttpStatus.OK);
+    }
 }
