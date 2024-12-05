@@ -69,4 +69,13 @@ public class TaskService {
         // Save and return the task
         return taskRepository.save(task);
     }
+
+    public Optional<TaskResponseDTO> getTaskById(Long id) {
+        Optional<Task> foundTask = taskRepository.findById(id);
+        if(foundTask.isPresent())
+            return Optional.ofNullable(buildTaskResponseDTO(foundTask.get()));
+        else{
+            return Optional.empty();
+        }
+    }
 }
