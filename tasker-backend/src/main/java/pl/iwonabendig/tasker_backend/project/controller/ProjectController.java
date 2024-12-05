@@ -40,4 +40,11 @@ public class ProjectController {
         else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping("/user/{id}")
+    public ResponseEntity<List<ProjectResponseDTO>> getProjectsByUserId(@PathVariable Long id) {
+        List<ProjectResponseDTO> projects = projectService.getProjectsByUserId(id);
+        if(projects.isEmpty()) return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        else return new ResponseEntity<>(projects, HttpStatus.OK);
+    }
+
 }

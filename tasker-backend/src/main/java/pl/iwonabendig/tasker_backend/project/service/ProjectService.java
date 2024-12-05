@@ -58,4 +58,12 @@ public class ProjectService {
 
         return Optional.ofNullable(buildProjectResponse(project.get()));
     }
+
+    public List<ProjectResponseDTO> getProjectsByUserId(Long id) {
+        return projectRepository.findProjectsByUserId(id).stream()
+                .map(this::buildProjectResponse)
+                .collect(Collectors.toList());
+
+
+    }
 }
