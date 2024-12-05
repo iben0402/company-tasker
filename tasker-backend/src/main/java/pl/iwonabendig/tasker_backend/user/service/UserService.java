@@ -2,6 +2,7 @@ package pl.iwonabendig.tasker_backend.user.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import pl.iwonabendig.tasker_backend.role.entity.Role;
 import pl.iwonabendig.tasker_backend.user.dto.UserResponseDTO;
 import pl.iwonabendig.tasker_backend.user.entity.User;
 import pl.iwonabendig.tasker_backend.user.repository.UserRepository;
@@ -47,5 +48,11 @@ public class UserService {
 
     public UserResponseDTO buildUserResponse(User user) {
         return new UserResponseDTO(user.getId(),user.getName(), user.getSurname(), user.getUsername(), user.getRole().getName(), user.getTeam().getName());
+    }
+
+    public List<UserResponseDTO> getUsersByRole(Role role) {
+        return userRepository.findAllByRole(role).stream()
+                .map(this::buildUserResponse)
+                .collect(Collectors.toList());
     }
 }

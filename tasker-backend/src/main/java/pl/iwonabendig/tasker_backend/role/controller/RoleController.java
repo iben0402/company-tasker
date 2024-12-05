@@ -4,7 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pl.iwonabendig.tasker_backend.role.RoleRequestDTO;
+import pl.iwonabendig.tasker_backend.role.dto.RoleRequestDTO;
+import pl.iwonabendig.tasker_backend.role.dto.RoleResponseDTO;
 import pl.iwonabendig.tasker_backend.role.entity.Role;
 import pl.iwonabendig.tasker_backend.role.service.RoleService;
 
@@ -32,8 +33,8 @@ public class RoleController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Role> getRoleById(@PathVariable Long id) {
-        Optional<Role> role = roleService.getRoleById(id);
+    public ResponseEntity<RoleResponseDTO> getRoleById(@PathVariable Long id) {
+        Optional<RoleResponseDTO> role = roleService.getRoleById(id);
         if(role.isPresent()) return new ResponseEntity<>(role.get(), HttpStatus.OK);
         else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }

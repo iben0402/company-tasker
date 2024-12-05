@@ -1,4 +1,4 @@
-package pl.iwonabendig.tasker_backend.role;
+package pl.iwonabendig.tasker_backend.role.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
