@@ -10,6 +10,7 @@ import pl.iwonabendig.tasker_backend.project.entity.Project;
 import pl.iwonabendig.tasker_backend.project.service.ProjectService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/projects")
@@ -30,6 +31,13 @@ public class ProjectController {
         } catch (IllegalArgumentException e) {
             return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
         }
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProjectResponseDTO> getProjectById(@PathVariable Long id) {
+        Optional<ProjectResponseDTO> project = projectService.getProjectById(id);
+        if(project.isPresent()) return new ResponseEntity<>(project.get(), HttpStatus.OK);
+        else return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
 }

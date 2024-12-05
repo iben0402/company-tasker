@@ -1,6 +1,7 @@
 package pl.iwonabendig.tasker_backend.project.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import pl.iwonabendig.tasker_backend.project.dto.ProjectRequestDTO;
 import pl.iwonabendig.tasker_backend.project.dto.ProjectResponseDTO;
@@ -10,6 +11,7 @@ import pl.iwonabendig.tasker_backend.project.repository.ProjectRepository;
 import pl.iwonabendig.tasker_backend.team.repository.TeamRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -51,4 +53,9 @@ public class ProjectService {
         return projectRepository.save(project);
     }
 
+    public Optional<ProjectResponseDTO> getProjectById(Long id) {
+        Optional<Project> project = projectRepository.findById(id);
+
+        return Optional.ofNullable(buildProjectResponse(project.get()));
+    }
 }
