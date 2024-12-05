@@ -22,6 +22,18 @@ public class UserController {
         return userService.getAllUsers();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<UserResponseDTO> getUser(@PathVariable Long id) {
+        Optional<UserResponseDTO> user = userService.getUser(id);
+        if(user.isPresent()) {
+            return new ResponseEntity<>(user.get(), HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+    }
+
     @PostMapping
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User createdUser = userService.createUser(user);
@@ -34,12 +46,13 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 
+    // TEMPORARY, TODO: IMPLEMENT AUTHOURIZATION USING SPRING SECURITY OR STH ELSE (ISSUE #1)
     @PostMapping("/login/{username}/{password}")
-    public ResponseEntity<Long> login(@PathVariable String username, @PathVariable String password) {
+    public ResponseEntity<UserResponseDTO> login(@PathVariable String username, @PathVariable String password) {
         Optional<User> user = userService.login(username, password);
 
         if (user.isPresent()) {
-            return new ResponseEntity<>(user.get().getId(), HttpStatus.OK);
+            return new ResponseEntity<>(userService.buildUserResponse(user.get()), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

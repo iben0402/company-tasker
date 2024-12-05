@@ -40,4 +40,18 @@ public class UserService {
     public Optional<User> login(String username, String password) {
         return userRepository.findByUsernameAndPassword(username, password);
     }
+
+    public Optional<UserResponseDTO> getUser(Long id) {
+        Optional<User> user = userRepository.findById(id);
+        if(user.isPresent()) {
+            User foundUser = user.get();
+            return Optional.of(buildUserResponse(foundUser));
+        }
+        else
+            return Optional.empty();
+    }
+
+    public UserResponseDTO buildUserResponse(User user) {
+        return new UserResponseDTO(user.getName(), user.getSurname(), user.getUsername(), user.getRole().getName(), user.getTeam().getName());
+    }
 }
