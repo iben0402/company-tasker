@@ -12,7 +12,7 @@ function ProjectsDisplay(props) {
                 ) : (
                     <ul className="projects-list">
                         {projects.map((project) => (
-                            <a href={"projects/" + project.id} key={project.id}>
+                            <a href={project.id} key={project.id}>
                                 <li className={"project-card"} key={project.id}>
                                     <h2>{project.name}</h2>
                                     <p className={"description"}>{project.description}</p>

@@ -1,20 +1,18 @@
-.main-container {
-    margin-left: 300px;
-    color: white;
-    margin-top: 40px
-}
 
 .project-details {
     background: #262c61;
     padding: 20px 40px;
     margin: 30px 0;
     border-radius: 20px;
-    width: 80%
+    width: 100%;
+    margin-left: 300px;
+    color: white;
+    margin-right: 30px;
 }
 
 .project-details h2 {
     font-weight: 300;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .project-details .description, .project-details .teams {
