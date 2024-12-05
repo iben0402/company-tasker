@@ -1,11 +1,11 @@
 import './ProjectDetails.css';
 import { Sidebar } from "./Sidebar";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";  // Import useParams hook
+import { useParams } from "react-router-dom";
 
 function ProjectDetails() {
-    const [project, setProject] = useState(null);  // State to store project data
-    const { id } = useParams(); // Get the id from the URL using useParams
+    const [project, setProject] = useState(null);
+    const { id } = useParams();
 
     // Fetch project data when the component mounts
     useEffect(() => {

@@ -13,6 +13,10 @@ import LoginPage from './LoginPage';
 import ProjectDetails from "./ProjectDetails";
 import MyProjects from "./MyProjects";
 import NewProject from "./NewProject";
+import AllTasks from "./AllTasks";
+import MyTasks from "./MyTasks";
+import TaskDetails from "./TaskDetails";
+import NewTask from "./NewTask";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +32,12 @@ root.render(
                 <Route path="/roles" element={<Roles />} />
                 <Route path="/employees" element={<Employees />} />
                 {/* SUB PAGES */}
+
+                {/* TASKS */}
+                <Route path={"/tasks/my"} element={<MyTasks />} />
+                <Route path={"/tasks/all"} element={<AllTasks />} />
+                <Route path={"/tasks/:id"} element={<TaskDetails />} />
+                <Route path={"/tasks/new"} element={<NewTask />} />
 
                 {/*PROJECTS*/}
                 <Route path={"/projects/my"} element={<MyProjects />} />

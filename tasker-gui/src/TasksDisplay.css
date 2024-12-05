@@ -1,0 +1,33 @@
+.tasks-list {
+    list-style-type: none;
+}
+
+.task-card {
+    background: #262c61;
+    padding: 20px 40px;
+    margin: 30px 0;
+    border-radius: 20px;
+}
+
+.task-card h2 {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.task-card .description, .task-card .teams {
+    background: #363f87;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tasks-list a {
+    color: white;
+    text-decoration: underline;
+}
+
+.task-card:hover {
+    scale: 100.5%;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 1);
+    box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 1);
+}
