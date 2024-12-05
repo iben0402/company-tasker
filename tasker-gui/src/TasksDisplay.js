@@ -1,5 +1,14 @@
 import './TasksDisplay.css';
 
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+    }).format(date);
+}
+
 // TODO: add edit and delete buttons
 // TODO: make display nicer
 function TaskDisplay(props) {
@@ -18,7 +27,7 @@ function TaskDisplay(props) {
                                     <h2>{task.name}</h2>
                                 </a>
                                 <p className={"project"}><strong>Project: </strong>{task.projectName}</p>
-                                <p className={"deadline"}><strong>Deadline: </strong>{task.deadline}</p>
+                                <p className={"deadline"}><strong>Deadline: </strong>{formatDate(task.deadline)}</p>
                                 <p className={"assignee"}><strong>Assignee: </strong>{task.assigneeUsername}</p>
                                 <p className={"status"}>{task.status}</p>
                             </li>

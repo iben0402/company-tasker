@@ -13,9 +13,9 @@ function Teams() {
             <div className="content">
                 <h1 className={"title"}>TEAMS</h1>
                 <div className={"menu"}>
-                    <MenuButton url={"/teams"} title={"Your teams"} icon={<UsersIcon/>}/>
-                    <MenuButton url={"/teams"} title={"All teams"} icon={<UsersIcon/>}/>
-                    <MenuButton url={"/teams"} title={"New team"} icon={<PlusCircleIcon/>}/>
+                    <MenuButton url={"/teams/my"} title={"Your teams"} icon={<UsersIcon/>}/>
+                    <MenuButton url={"/teams/all"} title={"All teams"} icon={<UsersIcon/>}/>
+                    <MenuButton url={"/teams/new"} title={"New team"} icon={<PlusCircleIcon/>}/>
                 </div>
             </div>
         </div>

@@ -17,6 +17,10 @@ import AllTasks from "./AllTasks";
 import MyTasks from "./MyTasks";
 import TaskDetails from "./TaskDetails";
 import NewTask from "./NewTask";
+import MyTeams from "./MyTeams";
+import AllTeams from "./AllTeams";
+import TeamDetails from "./TeamDetails";
+import NewTeam from "./NewTeam";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -44,6 +48,12 @@ root.render(
                 <Route path={"/projects/all"} element={<AllProjects />} />
                 <Route path={"/projects/:id"} element={<ProjectDetails />} />
                 <Route path={"/projects/new"} element={<NewProject />} />
+
+                {/* TEAMS */}
+                <Route path={"/teams/my"} element={<MyTeams />} />
+                <Route path={"/teams/all"} element={<AllTeams />} />
+                <Route path={"/teams/:id"} element={<TeamDetails />} />
+                <Route path={"/teams/new"} element={<NewTeam />} />
             </Routes>
         </Router>
     </React.StrictMode>

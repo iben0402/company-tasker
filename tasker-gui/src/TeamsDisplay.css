@@ -1,0 +1,33 @@
+.teams-list {
+    list-style-type: none;
+}
+
+.team-card {
+    background: #262c61;
+    padding: 20px 40px;
+    margin: 30px 0;
+    border-radius: 20px;
+}
+
+.team-card h2 {
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.team-card .description, .team-card .owner {
+    background: #363f87;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.teams-list a {
+    color: white;
+    text-decoration: none;
+}
+
+.project-card:hover {
+    scale: 100.5%;
+    -webkit-box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 1);
+    box-shadow: 8px 8px 24px 0px rgba(0, 0, 0, 1);
+}
