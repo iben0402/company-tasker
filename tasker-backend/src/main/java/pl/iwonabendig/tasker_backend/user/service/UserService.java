@@ -19,13 +19,7 @@ public class UserService {
     public List<UserResponseDTO> getAllUsers() {
         List<User> users = userRepository.findAll();
         return users.stream()
-                .map(user -> new UserResponseDTO(
-                        user.getName(),
-                        user.getSurname(),
-                        user.getUsername(),
-                        user.getRole().getName(),
-                        user.getTeam() != null ? user.getTeam().getName() : null
-                ))
+                .map(this::buildUserResponse)
                 .collect(Collectors.toList());
     }
 
@@ -52,6 +46,6 @@ public class UserService {
     }
 
     public UserResponseDTO buildUserResponse(User user) {
-        return new UserResponseDTO(user.getName(), user.getSurname(), user.getUsername(), user.getRole().getName(), user.getTeam().getName());
+        return new UserResponseDTO(user.getId(),user.getName(), user.getSurname(), user.getUsername(), user.getRole().getName(), user.getTeam().getName());
     }
 }
