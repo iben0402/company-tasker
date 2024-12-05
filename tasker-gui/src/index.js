@@ -21,6 +21,9 @@ import MyTeams from "./MyTeams";
 import AllTeams from "./AllTeams";
 import TeamDetails from "./TeamDetails";
 import NewTeam from "./NewTeam";
+import AllRoles from "./AllRoles";
+import RoleDetails from "./RoleDetails";
+import NewRole from "./NewRole";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -54,6 +57,12 @@ root.render(
                 <Route path={"/teams/all"} element={<AllTeams />} />
                 <Route path={"/teams/:id"} element={<TeamDetails />} />
                 <Route path={"/teams/new"} element={<NewTeam />} />
+
+                {/* Roles */}
+                <Route path={"/roles/my"} element={<MyTeams />} />
+                <Route path={"/roles/all"} element={<AllRoles />} />
+                <Route path={"/roles/:id"} element={<RoleDetails />} />
+                <Route path={"/roles/new"} element={<NewRole />} />
             </Routes>
         </Router>
     </React.StrictMode>

@@ -1,0 +1,22 @@
+
+.role-details {
+    background: #262c61;
+    padding: 20px 40px;
+    margin: 30px 0;
+    border-radius: 20px;
+    width: 100%;
+    margin-left: 300px;
+    color: white;
+    margin-right: 30px;
+}
+
+.role-details h2 {
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.role-details .description, .role-details .users {
+    background: #363f87;
+    padding: 20px;
+    border-radius: 10px;
+}
